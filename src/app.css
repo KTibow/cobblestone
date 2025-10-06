@@ -17,11 +17,13 @@
 }
 body {
   display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
+  height: 100dvh;
   background-color: rgb(var(--m3-scheme-background));
   color: rgb(var(--m3-scheme-on-background));
   --m3-font: Inter Variable, system-ui;
+}
+textarea {
+  background-color: transparent;
 }
 @media (prefers-color-scheme: light) {
   :root {

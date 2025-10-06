@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@ktibow/iconset-material-symbols':
+        specifier: ^0.0.1759207056
+        version: 0.0.1759207056
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.1
         version: 6.2.1(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2))
@@ -24,8 +27,8 @@ importers:
         specifier: ^5.9.0
         version: 5.9.0
       monoidentity:
-        specifier: ^0.10.2
-        version: 0.10.2(svelte@5.39.9)(typescript@5.9.3)
+        specifier: link:/home/kendell/Documents/Projects/monoidentity/sdk
+        version: link:../monoidentity/sdk
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -225,6 +228,9 @@ packages:
   '@ktibow/iconset-material-symbols@0.0.1758086573':
     resolution: {integrity: sha512-xBvXeBqqoChAwoMJuyVYXrz1iVuInliuG2ch2RJuO1kqgeFSD8clyPgTo5Q8sfEcg2C+tZS+GuJFQ9RLudoaWg==}
 
+  '@ktibow/iconset-material-symbols@0.0.1759207056':
+    resolution: {integrity: sha512-sxg9oBGDlULHmfUej1l2Sz9TMR+Tu7CKxOyUfqzmdYH8vMspTkywUcwZHeiXW4dxxkcd+89WFAodzYgeSC6D/w==}
+
   '@ktibow/material-color-utilities-nightly@0.3.11758823675000':
     resolution: {integrity: sha512-JGEHPzvjBGR1WEUEnQmGevZvP/LGluzBuDjFRpeIjt26EYfEcT20HAX4YXtwoauTS4F5vUTnw67kb5iYAUQvSg==}
 
@@ -361,9 +367,6 @@ packages:
   '@tsconfig/svelte@5.0.5':
     resolution: {integrity: sha512-48fAnUjKye38FvMiNOj0J9I/4XlQQiZlpe9xaNPfe8vy2Y1hFBt8g1yqf2EGjVvHavo4jf2lC+TQyENCr4BJBQ==}
 
-  '@tsndr/cloudflare-worker-jwt@3.2.0':
-    resolution: {integrity: sha512-y45452JzKxFDfCUHNGrdgIcrJTkYa6xtrKtCQTjKj+hjzw8dOHF9R0uGuU8WxvCCMi4sMzZ1KREnZTsTy7DsiQ==}
-
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
@@ -381,9 +384,6 @@ packages:
   aria-query@5.3.2:
     resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
     engines: {node: '>= 0.4'}
-
-  aws4fetch@1.0.20:
-    resolution: {integrity: sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -410,9 +410,6 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  devalue@5.3.2:
-    resolution: {integrity: sha512-UDsjUbpQn9kvm68slnrs+mfxwFkIflOhkanmyabZ8zOYk8SMEIbJ3TK+88g70hSIeytu4y18f0z/hYHMTrXIWw==}
-
   esbuild@0.25.10:
     resolution: {integrity: sha512-9RiGKvCwaqxO2owP61uQ4BgNborAQskMR6QusfWzQqv7AZOg5oGehdY2pRJMTKuwxd1IDBP4rSbI5lHzU7SMsQ==}
     engines: {node: '>=18'}
@@ -438,9 +435,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  idb-keyval@6.2.2:
-    resolution: {integrity: sha512-yjD9nARJ/jb1g+CvD0tlhUHOrJ9Sy0P8T9MF3YaLlHnSRpwPfpTX0XIvpmw3gAJUmEu3FiICLBDPXVwyEvrleg==}
-
   is-reference@3.0.3:
     resolution: {integrity: sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==}
 
@@ -452,11 +446,6 @@ packages:
 
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
-
-  monoidentity@0.10.2:
-    resolution: {integrity: sha512-/ilPgn8Jj2OnzYYV8STTX+Wzs3Fk2nYCjGH2u+VVfySgC0/llRUCKxoYk7oFFkjaqn+lBNxKg48Mqqrmdh3GvQ==}
-    peerDependencies:
-      svelte: ^5.0.0
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -532,14 +521,6 @@ packages:
 
   undici-types@7.13.0:
     resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
-
-  valibot@1.1.0:
-    resolution: {integrity: sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==}
-    peerDependencies:
-      typescript: '>=5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   vite@7.1.9:
     resolution: {integrity: sha512-4nVGliEpxmhCL8DslSAUdxlB6+SMrhB0a1v5ijlh1xB1nEPuy1mxaHxysVucLHuWryAxLWg6a5ei+U4TLn/rFg==}
@@ -697,6 +678,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@ktibow/iconset-material-symbols@0.0.1759207056':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@ktibow/material-color-utilities-nightly@0.3.11758823675000': {}
 
   '@rollup/rollup-android-arm-eabi@4.52.4':
@@ -792,8 +777,6 @@ snapshots:
 
   '@tsconfig/svelte@5.0.5': {}
 
-  '@tsndr/cloudflare-worker-jwt@3.2.0': {}
-
   '@types/estree@1.0.8': {}
 
   '@types/node@24.6.2':
@@ -805,8 +788,6 @@ snapshots:
   acorn@8.15.0: {}
 
   aria-query@5.3.2: {}
-
-  aws4fetch@1.0.20: {}
 
   axobject-query@4.1.0: {}
 
@@ -821,8 +802,6 @@ snapshots:
       ms: 2.1.3
 
   deepmerge@4.3.1: {}
-
-  devalue@5.3.2: {}
 
   esbuild@0.25.10:
     optionalDependencies:
@@ -866,8 +845,6 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  idb-keyval@6.2.2: {}
-
   is-reference@3.0.3:
     dependencies:
       '@types/estree': 1.0.8
@@ -884,17 +861,6 @@ snapshots:
   magic-string@0.30.19:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
-
-  monoidentity@0.10.2(svelte@5.39.9)(typescript@5.9.3):
-    dependencies:
-      '@tsndr/cloudflare-worker-jwt': 3.2.0
-      aws4fetch: 1.0.20
-      devalue: 5.3.2
-      idb-keyval: 6.2.2
-      svelte: 5.39.9
-      valibot: 1.1.0(typescript@5.9.3)
-    transitivePeerDependencies:
-      - typescript
 
   mri@1.2.0: {}
 
@@ -992,10 +958,6 @@ snapshots:
   typescript@5.9.3: {}
 
   undici-types@7.13.0: {}
-
-  valibot@1.1.0(typescript@5.9.3):
-    optionalDependencies:
-      typescript: 5.9.3
 
   vite@7.1.9(@types/node@24.6.2):
     dependencies:
