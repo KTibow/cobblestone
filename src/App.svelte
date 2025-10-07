@@ -89,7 +89,7 @@
       </button>
     {/if}
   </div>
-  {#each files as file}
+  {#each files as file (file.name)}
     <button
       class="file"
       disabled={file.name == currentOpenFilePath}
