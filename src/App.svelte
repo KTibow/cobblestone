@@ -5,6 +5,7 @@
   import iconPlus from "@ktibow/iconset-material-symbols/add-2-rounded";
   import { getScopedFS } from "monoidentity";
   import { Icon, Layer } from "m3-svelte";
+  import { getToday } from "./lib";
 
   let currentDirectoryPath = $state("/");
   let currentOpenFilePath = $state("");
@@ -55,14 +56,6 @@
     if (!currentOpenFilePath) return;
     fs[currentOpenFilePath] = currentContent;
     bumpFs();
-  };
-
-  const goToToday = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
-    loadFile(`Present/${year}-${month}-${day}.md`);
   };
 
   const createFile = () => {
@@ -127,7 +120,7 @@
     onchange={saveFile}
   ></textarea>
 {:else}
-  <button class="today-button m3-font-headline-small" onclick={goToToday}>
+  <button class="today-button m3-font-headline-small" onclick={() => loadFile(getToday())}>
     <Layer />
     Open the daily note
   </button>
