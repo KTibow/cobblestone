@@ -12,13 +12,10 @@
   let currentContent = $state("");
 
   const fs = getScopedFS("Obsidian");
-  let fsVersion = $state(0);
-  const bumpFs = () => (fsVersion += 1);
 
   type Entry = { name: string; type: "directory" | "file" };
 
   const files = $derived.by<Entry[]>(() => {
-    fsVersion; // depend on changes to fs
     const prefix = currentDirectoryPath == "/" ? "" : currentDirectoryPath;
     const keys = Object.keys(fs);
     const dirSet = new Set<string>();
@@ -44,18 +41,13 @@
   });
 
   const loadFile = (path: string) => {
-    if (fs[path] != undefined) {
-      currentContent = fs[path];
-    } else {
-      currentContent = "";
-    }
+    currentContent = fs[path] || "";
     currentOpenFilePath = path;
   };
 
   const saveFile = () => {
     if (!currentOpenFilePath) return;
     fs[currentOpenFilePath] = currentContent;
-    bumpFs();
   };
 
   const createFile = () => {
@@ -110,15 +102,7 @@
   </button>
 </div>
 {#if currentOpenFilePath}
-  <textarea
-    class="focus-none"
-    value={currentContent}
-    oninput={(e) => {
-      const t = e.target as HTMLTextAreaElement;
-      currentContent = t.value;
-    }}
-    onchange={saveFile}
-  ></textarea>
+  <textarea class="focus-none" bind:value={currentContent} onchange={saveFile}></textarea>
 {:else}
   <button class="today-button m3-font-headline-small" onclick={() => loadFile(getToday())}>
     <Layer />
