@@ -102,7 +102,11 @@
   </button>
 </div>
 {#if currentOpenFilePath}
-  <textarea class="focus-none" bind:value={currentContent} onchange={saveFile}></textarea>
+  {#if currentOpenFilePath.endsWith(".png")}
+    <img src="data:image/png;base64,{btoa(currentContent)}" alt="" />
+  {:else}
+    <textarea class="focus-none" bind:value={currentContent} onchange={saveFile}></textarea>
+  {/if}
 {:else}
   <button class="today-button m3-font-headline-small" onclick={() => loadFile(getToday())}>
     <Layer />
