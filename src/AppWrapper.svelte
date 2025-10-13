@@ -3,6 +3,6 @@
   import App from "./App.svelte";
 </script>
 
-<Monoidentity app="cobblestone">
+<Monoidentity app="cobblestone" shouldBackup={(path) => path.startsWith("Obsidian")}>
   <App />
 </Monoidentity>

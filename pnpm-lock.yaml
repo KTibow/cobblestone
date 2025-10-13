@@ -9,44 +9,44 @@ importers:
   .:
     devDependencies:
       '@ktibow/iconset-material-symbols':
-        specifier: ^0.0.1759207056
-        version: 0.0.1759207056
+        specifier: ^0.0.1760073587
+        version: 0.0.1760073587
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.1
-        version: 6.2.1(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2))
+        version: 6.2.1(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2))
       '@tsconfig/svelte':
         specifier: ^5.0.5
         version: 5.0.5
       '@types/node':
-        specifier: ^24.6.0
-        version: 24.6.2
+        specifier: ^24.7.2
+        version: 24.7.2
       '@unocss/reset':
-        specifier: ^66.5.2
-        version: 66.5.2
+        specifier: ^66.5.3
+        version: 66.5.3
       m3-svelte:
-        specifier: ^5.9.0
-        version: 5.9.0
+        specifier: ^5.9.1
+        version: 5.9.1
       monoidentity:
-        specifier: ^0.12.1
-        version: 0.12.1(svelte@5.39.9)(typescript@5.9.3)
+        specifier: ^0.14.0
+        version: 0.14.0(svelte@5.39.11)(typescript@5.9.3)
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
       prettier-plugin-svelte:
         specifier: ^3.4.0
-        version: 3.4.0(prettier@3.6.2)(svelte@5.39.9)
+        version: 3.4.0(prettier@3.6.2)(svelte@5.39.11)
       svelte:
-        specifier: ^5.39.6
-        version: 5.39.9
+        specifier: ^5.39.11
+        version: 5.39.11
       svelte-check:
-        specifier: ^4.3.2
-        version: 4.3.2(picomatch@4.0.3)(svelte@5.39.9)(typescript@5.9.3)
+        specifier: ^4.3.3
+        version: 4.3.3(picomatch@4.0.3)(svelte@5.39.11)(typescript@5.9.3)
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
       vite:
-        specifier: ^7.1.7
-        version: 7.1.9(@types/node@24.6.2)
+        specifier: ^7.1.9
+        version: 7.1.9(@types/node@24.7.2)
 
 packages:
 
@@ -225,14 +225,11 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@ktibow/iconset-material-symbols@0.0.1758086573':
-    resolution: {integrity: sha512-xBvXeBqqoChAwoMJuyVYXrz1iVuInliuG2ch2RJuO1kqgeFSD8clyPgTo5Q8sfEcg2C+tZS+GuJFQ9RLudoaWg==}
+  '@ktibow/iconset-material-symbols@0.0.1760073587':
+    resolution: {integrity: sha512-vm7Y4lsyBQ0gFmfqVK2/8SZW344CjBc12PZSybVJzxDswW8HBWnN7EBfdfqsx/mY0baI5qN0kLFhft2QHcsz/Q==}
 
-  '@ktibow/iconset-material-symbols@0.0.1759207056':
-    resolution: {integrity: sha512-sxg9oBGDlULHmfUej1l2Sz9TMR+Tu7CKxOyUfqzmdYH8vMspTkywUcwZHeiXW4dxxkcd+89WFAodzYgeSC6D/w==}
-
-  '@ktibow/material-color-utilities-nightly@0.3.11758823675000':
-    resolution: {integrity: sha512-JGEHPzvjBGR1WEUEnQmGevZvP/LGluzBuDjFRpeIjt26EYfEcT20HAX4YXtwoauTS4F5vUTnw67kb5iYAUQvSg==}
+  '@ktibow/material-color-utilities-nightly@0.3.11760125264000':
+    resolution: {integrity: sha512-AGy4UX2kNt3792nTIbkUOWm/FFIQOew7V6GjM292zx0HVtHKiZJ/q185GxsNR74Szpoj63Gy0HuUF3U3oL+wYA==}
 
   '@rollup/rollup-android-arm-eabi@4.52.4':
     resolution: {integrity: sha512-BTm2qKNnWIQ5auf4deoetINJm2JzvihvGb9R6K/ETwKLql/Bb3Eg2H1FBp1gUb4YGbydMA3jcmQTR73q7J+GAA==}
@@ -373,11 +370,11 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
-  '@types/node@24.6.2':
-    resolution: {integrity: sha512-d2L25Y4j+W3ZlNAeMKcy7yDsK425ibcAOO2t7aPTz6gNMH0z2GThtwENCDc0d/Pw9wgyRqE5Px1wkV7naz8ang==}
+  '@types/node@24.7.2':
+    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
 
-  '@unocss/reset@66.5.2':
-    resolution: {integrity: sha512-DirXdqrkSp3fThRGOz0s0ehsYBpLb72Vh4QlPfMFuwHHFC9P9IDTLMUj5kD51A9fdy07Wrmhs7T5CQ//DlfOdQ==}
+  '@unocss/reset@66.5.3':
+    resolution: {integrity: sha512-z9VOurNlr3nJQcCbTL13a6KcQ2aQo/ikHDdGZwPzLYtqGAwHvsq1nXFswkJc+XWD7V5q1mjmGEKLBqXFIokMpw==}
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
@@ -453,14 +450,14 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  m3-svelte@5.9.0:
-    resolution: {integrity: sha512-eanTP+vmCIoIyLQfP2XM88qU6vcgjR52ai1h1f8LXlvSm3FA6haZUyimdvMfBfb+1+yhTYz6LMDKr3ot/lpC9Q==}
+  m3-svelte@5.9.1:
+    resolution: {integrity: sha512-riO1tKEZLuCYfmGbgu+dHkHUMYM79tX3fezMQj0pel/JPdM7hS4BGbIGHuRboqX0I7Wrldy85UrmbinDakS2Jw==}
 
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
 
-  monoidentity@0.12.1:
-    resolution: {integrity: sha512-wh/2EEsJw3Qsc4+O6b5ew2nXpwiTPWGkL7Q9TPNb8CTRjAYbIMQUjAcscA55dqbd+dBuSAxmVhm9xjax2Zo1yw==}
+  monoidentity@0.14.0:
+    resolution: {integrity: sha512-0umNJuBiVS6y/uJwYzOuBu4WOzRznxqHU66Zo/1ztEji8gLdUYgW3yE1oZLvxmcCN139gISXbk8dFr5HuQkFcQ==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -515,16 +512,16 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
-  svelte-check@4.3.2:
-    resolution: {integrity: sha512-71udP5w2kaSTcX8iV0hn3o2FWlabQHhJTJLIQrCqMsrcOeDUO2VhCQKKCA8AMVHSPwdxLEWkUWh9OKxns5PD9w==}
+  svelte-check@4.3.3:
+    resolution: {integrity: sha512-RYP0bEwenDXzfv0P1sKAwjZSlaRyqBn0Fz1TVni58lqyEiqgwztTpmodJrGzP6ZT2aHl4MbTvWP6gbmQ3FOnBg==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte@5.39.9:
-    resolution: {integrity: sha512-sVOie0sbU9F/Lh0IoUfaq9hLzujRKxiL7xTMbG0y8ROx/qErtbfmm6sLSlJUbUMW4NcIgqHQPFiHX4LakA8fzA==}
+  svelte@5.39.11:
+    resolution: {integrity: sha512-8MxWVm2+3YwrFbPaxOlT1bbMi6OTenrAgks6soZfiaS8Fptk4EVyRIFhJc3RpO264EeSNwgjWAdki0ufg4zkGw==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -536,8 +533,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.13.0:
-    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
+  undici-types@7.14.0:
+    resolution: {integrity: sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA==}
 
   valibot@1.1.0:
     resolution: {integrity: sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==}
@@ -699,15 +696,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@ktibow/iconset-material-symbols@0.0.1758086573':
+  '@ktibow/iconset-material-symbols@0.0.1760073587':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@ktibow/iconset-material-symbols@0.0.1759207056':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@ktibow/material-color-utilities-nightly@0.3.11758823675000': {}
+  '@ktibow/material-color-utilities-nightly@0.3.11760125264000': {}
 
   '@rollup/rollup-android-arm-eabi@4.52.4':
     optional: true
@@ -779,24 +772,24 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2)))(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2))':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2)))(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.1(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2))
+      '@sveltejs/vite-plugin-svelte': 6.2.1(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2))
       debug: 4.4.3
-      svelte: 5.39.9
-      vite: 7.1.9(@types/node@24.6.2)
+      svelte: 5.39.11
+      vite: 7.1.9(@types/node@24.7.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2))':
+  '@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2)))(svelte@5.39.9)(vite@7.1.9(@types/node@24.6.2))
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2)))(svelte@5.39.11)(vite@7.1.9(@types/node@24.7.2))
       debug: 4.4.3
       deepmerge: 4.3.1
       magic-string: 0.30.19
-      svelte: 5.39.9
-      vite: 7.1.9(@types/node@24.6.2)
-      vitefu: 1.1.1(vite@7.1.9(@types/node@24.6.2))
+      svelte: 5.39.11
+      vite: 7.1.9(@types/node@24.7.2)
+      vitefu: 1.1.1(vite@7.1.9(@types/node@24.7.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -806,11 +799,11 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  '@types/node@24.6.2':
+  '@types/node@24.7.2':
     dependencies:
-      undici-types: 7.13.0
+      undici-types: 7.14.0
 
-  '@unocss/reset@66.5.2': {}
+  '@unocss/reset@66.5.3': {}
 
   acorn@8.15.0: {}
 
@@ -884,24 +877,24 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  m3-svelte@5.9.0:
+  m3-svelte@5.9.1:
     dependencies:
       '@iconify/types': 2.0.0
-      '@ktibow/iconset-material-symbols': 0.0.1758086573
-      '@ktibow/material-color-utilities-nightly': 0.3.11758823675000
-      svelte: 5.39.9
+      '@ktibow/iconset-material-symbols': 0.0.1760073587
+      '@ktibow/material-color-utilities-nightly': 0.3.11760125264000
+      svelte: 5.39.11
 
   magic-string@0.30.19:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  monoidentity@0.12.1(svelte@5.39.9)(typescript@5.9.3):
+  monoidentity@0.14.0(svelte@5.39.11)(typescript@5.9.3):
     dependencies:
       '@tsndr/cloudflare-worker-jwt': 3.2.0
       aws4fetch: 1.0.20
       devalue: 5.3.2
       idb-keyval: 6.2.2
-      svelte: 5.39.9
+      svelte: 5.39.11
       valibot: 1.1.0(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
@@ -922,10 +915,10 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.39.9):
+  prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.39.11):
     dependencies:
       prettier: 3.6.2
-      svelte: 5.39.9
+      svelte: 5.39.11
 
   prettier@3.6.2: {}
 
@@ -965,19 +958,19 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  svelte-check@4.3.2(picomatch@4.0.3)(svelte@5.39.9)(typescript@5.9.3):
+  svelte-check@4.3.3(picomatch@4.0.3)(svelte@5.39.11)(typescript@5.9.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       chokidar: 4.0.3
       fdir: 6.5.0(picomatch@4.0.3)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.39.9
+      svelte: 5.39.11
       typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte@5.39.9:
+  svelte@5.39.11:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1001,13 +994,13 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  undici-types@7.13.0: {}
+  undici-types@7.14.0: {}
 
   valibot@1.1.0(typescript@5.9.3):
     optionalDependencies:
       typescript: 5.9.3
 
-  vite@7.1.9(@types/node@24.6.2):
+  vite@7.1.9(@types/node@24.7.2):
     dependencies:
       esbuild: 0.25.10
       fdir: 6.5.0(picomatch@4.0.3)
@@ -1016,11 +1009,11 @@ snapshots:
       rollup: 4.52.4
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.6.2
+      '@types/node': 24.7.2
       fsevents: 2.3.3
 
-  vitefu@1.1.1(vite@7.1.9(@types/node@24.6.2)):
+  vitefu@1.1.1(vite@7.1.9(@types/node@24.7.2)):
     optionalDependencies:
-      vite: 7.1.9(@types/node@24.6.2)
+      vite: 7.1.9(@types/node@24.7.2)
 
   zimmerframe@1.1.4: {}

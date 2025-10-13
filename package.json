@@ -12,18 +12,18 @@
     "lint": "prettier --check ."
   },
   "devDependencies": {
-    "@ktibow/iconset-material-symbols": "^0.0.1759207056",
+    "@ktibow/iconset-material-symbols": "~0.0.1760073587",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
     "@tsconfig/svelte": "^5.0.5",
-    "@types/node": "^24.6.0",
-    "@unocss/reset": "^66.5.2",
-    "m3-svelte": "^5.9.0",
-    "monoidentity": "^0.12.1",
+    "@types/node": "^24.7.2",
+    "@unocss/reset": "^66.5.3",
+    "m3-svelte": "^5.9.1",
+    "monoidentity": "^0.14.0",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",
-    "svelte": "^5.39.6",
-    "svelte-check": "^4.3.2",
+    "svelte": "^5.39.11",
+    "svelte-check": "^4.3.3",
     "typescript": "~5.9.3",
-    "vite": "^7.1.7"
+    "vite": "^7.1.9"
   }
 }
