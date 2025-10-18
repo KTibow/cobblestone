@@ -24,8 +24,8 @@ importers:
         specifier: ^66.5.3
         version: 66.5.3
       m3-svelte:
-        specifier: ^5.9.1
-        version: 5.9.1
+        specifier: ^5.12.0
+        version: 5.12.0
       monoidentity:
         specifier: ^0.14.0
         version: 0.14.0(svelte@5.39.11)(typescript@5.9.3)
@@ -228,8 +228,11 @@ packages:
   '@ktibow/iconset-material-symbols@0.0.1760073587':
     resolution: {integrity: sha512-vm7Y4lsyBQ0gFmfqVK2/8SZW344CjBc12PZSybVJzxDswW8HBWnN7EBfdfqsx/mY0baI5qN0kLFhft2QHcsz/Q==}
 
-  '@ktibow/material-color-utilities-nightly@0.3.11760125264000':
-    resolution: {integrity: sha512-AGy4UX2kNt3792nTIbkUOWm/FFIQOew7V6GjM292zx0HVtHKiZJ/q185GxsNR74Szpoj63Gy0HuUF3U3oL+wYA==}
+  '@ktibow/iconset-material-symbols@0.0.1760591837':
+    resolution: {integrity: sha512-DbR9pYyv5JMPQUK7CX9c6zqeVcgmhDWeEeRIklt9hO5kkjpDZlfN70OJ6YQqI/DCPGqYdG4Za61jR0sSBllnfQ==}
+
+  '@ktibow/material-color-utilities-nightly@0.3.11760728781000':
+    resolution: {integrity: sha512-Typ9IFchoREme3jOmLSQfy20Wk0Y5wOUuCh6Q2eeFkkazlklR9gjzLEJUW+KMJa4tgTxAcfJW30HooD7AHxQIg==}
 
   '@rollup/rollup-android-arm-eabi@4.52.4':
     resolution: {integrity: sha512-BTm2qKNnWIQ5auf4deoetINJm2JzvihvGb9R6K/ETwKLql/Bb3Eg2H1FBp1gUb4YGbydMA3jcmQTR73q7J+GAA==}
@@ -450,8 +453,8 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  m3-svelte@5.9.1:
-    resolution: {integrity: sha512-riO1tKEZLuCYfmGbgu+dHkHUMYM79tX3fezMQj0pel/JPdM7hS4BGbIGHuRboqX0I7Wrldy85UrmbinDakS2Jw==}
+  m3-svelte@5.12.0:
+    resolution: {integrity: sha512-KMjM0u5vnkXlQ7TthYX74AuJNdK/2a9L5WrABXMrm+rYehKdIZOBHMU6pFM9E7g62UeiQcDBabpxCc3naUZEDw==}
 
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
@@ -522,6 +525,10 @@ packages:
 
   svelte@5.39.11:
     resolution: {integrity: sha512-8MxWVm2+3YwrFbPaxOlT1bbMi6OTenrAgks6soZfiaS8Fptk4EVyRIFhJc3RpO264EeSNwgjWAdki0ufg4zkGw==}
+    engines: {node: '>=18'}
+
+  svelte@5.41.0:
+    resolution: {integrity: sha512-mP3vFFv5OUM5JN189+nJVW74kQ1dGqUrXTEzvCEVZqessY0GxZDls1nWVvt4Sxyv2USfQvAZO68VRaeIZvpzKg==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -700,7 +707,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@ktibow/material-color-utilities-nightly@0.3.11760125264000': {}
+  '@ktibow/iconset-material-symbols@0.0.1760591837':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@ktibow/material-color-utilities-nightly@0.3.11760728781000': {}
 
   '@rollup/rollup-android-arm-eabi@4.52.4':
     optional: true
@@ -877,12 +888,12 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  m3-svelte@5.9.1:
+  m3-svelte@5.12.0:
     dependencies:
       '@iconify/types': 2.0.0
-      '@ktibow/iconset-material-symbols': 0.0.1760073587
-      '@ktibow/material-color-utilities-nightly': 0.3.11760125264000
-      svelte: 5.39.11
+      '@ktibow/iconset-material-symbols': 0.0.1760591837
+      '@ktibow/material-color-utilities-nightly': 0.3.11760728781000
+      svelte: 5.41.0
 
   magic-string@0.30.19:
     dependencies:
@@ -971,6 +982,23 @@ snapshots:
       - picomatch
 
   svelte@5.39.11:
+    dependencies:
+      '@jridgewell/remapping': 2.3.5
+      '@jridgewell/sourcemap-codec': 1.5.5
+      '@sveltejs/acorn-typescript': 1.0.6(acorn@8.15.0)
+      '@types/estree': 1.0.8
+      acorn: 8.15.0
+      aria-query: 5.3.2
+      axobject-query: 4.1.0
+      clsx: 2.1.1
+      esm-env: 1.2.2
+      esrap: 2.1.0
+      is-reference: 3.0.3
+      locate-character: 3.0.0
+      magic-string: 0.30.19
+      zimmerframe: 1.1.4
+
+  svelte@5.41.0:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5

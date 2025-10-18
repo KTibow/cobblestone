@@ -4,7 +4,7 @@
   import iconFile from "@ktibow/iconset-material-symbols/draft-outline-rounded";
   import iconPlus from "@ktibow/iconset-material-symbols/add-2-rounded";
   import { getScopedFS } from "monoidentity";
-  import { Icon, Layer } from "m3-svelte";
+  import { Icon, Layer, Button } from "m3-svelte";
   import { getToday } from "./lib";
 
   let currentDirectoryPath = $state("/");
@@ -108,10 +108,9 @@
     <textarea class="focus-none" bind:value={currentContent} onchange={saveFile}></textarea>
   {/if}
 {:else}
-  <button class="today-button m3-font-headline-small" onclick={() => loadFile(getToday())}>
-    <Layer />
-    Open the daily note
-  </button>
+  <Button variant="outlined" size="xl" style="margin:auto" onclick={() => loadFile(getToday())}
+    >Open today's note</Button
+  >
 {/if}
 
 <style>
@@ -169,18 +168,5 @@
     font: inherit;
     border-radius: inherit;
     resize: none;
-  }
-
-  .today-button {
-    display: flex;
-    align-items: center;
-    height: 6rem;
-    padding: 0 3rem;
-    border-radius: var(--m3-util-rounding-full);
-
-    background-color: rgb(var(--m3-scheme-surface-container-low));
-    color: rgb(var(--m3-scheme-primary));
-    position: relative;
-    margin: auto;
   }
 </style>
