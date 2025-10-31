@@ -9,9 +9,8 @@
     if (percent > 0.3) return;
 
     const today = fs[getToday()] || "";
-    if (today.includes("- [ ] Charge Chromebook")) return;
-    const separator = today.length > 0 && !today.endsWith("\n") ? "\n" : "";
-    fs[getToday()] = today + separator + CHARGE_TASK;
+    if (today.includes(CHARGE_TASK)) return;
+    fs[getToday()] = today + (today.length > 0 && !today.endsWith("\n") ? "\n" : "") + CHARGE_TASK;
   };
 
   onMount(() => {

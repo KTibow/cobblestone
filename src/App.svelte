@@ -6,6 +6,7 @@
   import { getScopedFS } from "monoidentity";
   import { Icon, Layer, Button } from "m3-svelte";
   import { getToday } from "./lib";
+  import AutoCharger from "./AutoCharger.svelte";
 
   let currentDirectoryPath = $state("/");
   let currentOpenFilePath = $state("");
@@ -59,6 +60,7 @@
   };
 </script>
 
+<AutoCharger />
 <div class="files">
   <div class="location">
     <span>{currentDirectoryPath}</span>
