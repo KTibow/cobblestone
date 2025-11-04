@@ -45,6 +45,14 @@
     currentOpenFilePath = path;
   };
 
+  const newDrawing = () => {
+    const title = prompt("Title");
+    if (!title) return;
+
+    const path = (currentDirectoryPath == "/" ? "" : currentDirectoryPath) + title + ".excalidraw";
+    loadFile(path);
+  };
+
   const newNote = () => {
     const title = prompt("Title");
     if (!title) return;
@@ -91,6 +99,11 @@
       <Icon icon={file.type == "directory" ? iconDots : iconFile} size={20} />
     </button>
   {/each}
+  <button class="file" onclick={newDrawing}>
+    <Layer />
+    New drawing
+    <Icon icon={iconPlus} size={20} />
+  </button>
   <button class="file" onclick={newNote}>
     <Layer />
     New note
