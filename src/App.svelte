@@ -7,10 +7,10 @@
   import { Icon, Layer, Button } from "m3-svelte";
   import { getToday } from "./lib";
   import AutoCharger from "./AutoCharger.svelte";
+  import View from "./View.svelte";
 
   let currentDirectoryPath = $state("/");
   let currentOpenFilePath = $state("");
-  let currentContent = $state("");
 
   const fs = getScopedFS("Obsidian");
 
@@ -42,20 +42,14 @@
   });
 
   const loadFile = (path: string) => {
-    currentContent = fs[path] || "";
     currentOpenFilePath = path;
   };
 
-  const saveFile = () => {
-    if (!currentOpenFilePath) return;
-    fs[currentOpenFilePath] = currentContent;
-  };
+  const newNote = () => {
+    const title = prompt("Title");
+    if (!title) return;
 
-  const createFile = () => {
-    const name = prompt("Name");
-    if (!name) return;
-
-    const path = (currentDirectoryPath == "/" ? "" : currentDirectoryPath) + name;
+    const path = (currentDirectoryPath == "/" ? "" : currentDirectoryPath) + title + ".md";
     loadFile(path);
   };
 </script>
@@ -97,18 +91,16 @@
       <Icon icon={file.type == "directory" ? iconDots : iconFile} size={20} />
     </button>
   {/each}
-  <button class="file" onclick={createFile}>
+  <button class="file" onclick={newNote}>
     <Layer />
-    Create
+    New note
     <Icon icon={iconPlus} size={20} />
   </button>
 </div>
 {#if currentOpenFilePath}
-  {#if currentOpenFilePath.endsWith(".png")}
-    <img src="data:image/png;base64,{btoa(currentContent)}" alt="" />
-  {:else}
-    <textarea class="focus-none" bind:value={currentContent} onchange={saveFile}></textarea>
-  {/if}
+  {#key currentOpenFilePath}
+    <View path={currentOpenFilePath} {fs} />
+  {/key}
 {:else}
   <Button variant="outlined" size="xl" style="margin:auto" onclick={() => loadFile(getToday())}
     >Open today's note</Button
@@ -162,13 +154,5 @@
       background-color: rgb(var(--m3-scheme-primary-container-subtle));
       color: rgb(var(--m3-scheme-on-primary-container-subtle));
     }
-  }
-
-  textarea {
-    flex-grow: 1;
-    padding: 1rem;
-    font: inherit;
-    border-radius: inherit;
-    resize: none;
   }
 </style>
