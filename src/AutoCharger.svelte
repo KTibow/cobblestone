@@ -4,7 +4,13 @@
   import { getToday } from "./lib";
 
   const fs = getScopedFS("Obsidian");
-  const CHARGE_TASK = "- [ ] Charge Chromebook";
+  const CHARGE_TASK =
+    "- [ ] Charge " +
+    (navigator.userAgent.includes("CrOS")
+      ? "Chromebook"
+      : navigator.userAgent.includes("Mobi")
+        ? "phone"
+        : "laptop");
 
   onMount(() => {
     if ("getBattery" in navigator) {
