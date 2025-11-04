@@ -14,9 +14,9 @@
 
   onMount(() => {
     if ("getBattery" in navigator) {
-      // @ts-expect-error unknown stuff
       navigator.getBattery().then((battery) => {
         const handlePercent = () => {
+          if (battery.charging) return;
           if (battery.level > 0.3) return;
 
           const today = fs[getToday()] || "";
