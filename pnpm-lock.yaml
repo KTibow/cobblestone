@@ -11,6 +11,9 @@ importers:
       '@excalidraw/excalidraw':
         specifier: 0.18.0-d1f3982
         version: 0.18.0-d1f3982(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@iconify/types':
+        specifier: ^2.0.0
+        version: 2.0.0
       '@ktibow/iconset-material-symbols':
         specifier: ~0.0.1760591837
         version: 0.0.1760591837
