@@ -92,4 +92,13 @@
   });
 </script>
 
-<div use:mountExcalidraw style:display="contents"></div>
+<div class="excalidraw-wrapper" use:mountExcalidraw></div>
+
+<style>
+  .excalidraw-wrapper {
+    display: contents;
+    :global(:focus-visible) {
+      animation: none;
+    }
+  }
+</style>
