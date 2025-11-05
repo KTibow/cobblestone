@@ -1,8 +1,9 @@
 <script lang="ts">
   import { CircularProgressEstimate } from "m3-svelte";
 
-  let { path, fs }: { path: string; fs: Record<string, string> } = $props();
+  let { path: _path, fs }: { path: string; fs: Record<string, string> } = $props();
 
+  const path = _path; // this component must be {#key}d
   let content = $derived(fs[path] || "");
 </script>
 
