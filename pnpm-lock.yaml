@@ -42,8 +42,8 @@ importers:
         specifier: ^5.12.1
         version: 5.12.1
       monoidentity:
-        specifier: ^0.14.1
-        version: 0.14.1(svelte@5.41.2)(typescript@5.9.3)
+        specifier: ^0.15.2
+        version: 0.15.2(svelte@5.41.2)(typescript@5.9.3)
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -1243,8 +1243,8 @@ packages:
   micromark@3.2.0:
     resolution: {integrity: sha512-uD66tJj54JLYq0De10AhWycZWGQNUvDI55xPgk2sQM5kn1JYlhbCMTtEeT27+vAhW2FBQxLlOmS3pmA7/2z4aA==}
 
-  monoidentity@0.14.1:
-    resolution: {integrity: sha512-8OFauqiTYP1bwSEBJQusCsgV5KY0q9WlScKHFLlvmqZqytdf6MCDCXNiPzYohlZnDvEbxM9NDtZm2EAxd4fNKw==}
+  monoidentity@0.15.2:
+    resolution: {integrity: sha512-xmUHoESPoLRQvIDXvge2CXiHO7wcXYka3JcsF8x3bu5mfl7xq/w4tof9dnGF6LFwM/Z1s0ud3Vn2TZKhbei3Ng==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -2789,7 +2789,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  monoidentity@0.14.1(svelte@5.41.2)(typescript@5.9.3):
+  monoidentity@0.15.2(svelte@5.41.2)(typescript@5.9.3):
     dependencies:
       '@tsndr/cloudflare-worker-jwt': 3.2.0
       aws4fetch: 1.0.20
