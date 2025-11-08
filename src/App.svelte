@@ -126,9 +126,11 @@
     <View path={currentFilePath} {fs} />
   {/key}
 {:else}
-  <Button variant="outlined" size="xl" style="margin:auto" onclick={() => loadFile(getToday())}
-    >Open today's note</Button
-  >
+  <div class="empty">
+    <Button variant="outlined" size="xl" style="margin:auto" onclick={() => loadFile(getToday())}
+      >Open today's note</Button
+    >
+  </div>
 {/if}
 
 <style>
@@ -136,11 +138,8 @@
     display: flex;
     flex-direction: column;
     overflow: clip auto;
-    border-start-end-radius: 1rem;
-    border-end-end-radius: 1rem;
     width: 15rem;
     flex-shrink: 0;
-    background-color: rgb(var(--m3-scheme-surface-container-lowest));
   }
 
   .location {
@@ -161,5 +160,13 @@
 
       position: relative;
     }
+  }
+
+  .empty {
+    display: grid;
+    place-items: center;
+    flex-grow: 1;
+    border-radius: 1rem 0 0 1rem;
+    background-color: rgb(var(--m3-scheme-background));
   }
 </style>

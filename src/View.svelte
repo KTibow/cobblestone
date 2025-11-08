@@ -37,7 +37,8 @@
     flex-grow: 1;
     padding: 1rem;
     font: inherit;
-    border-radius: inherit;
     resize: none;
+    border-radius: 1rem 0 0 1rem;
+    background-color: rgb(var(--m3-scheme-background));
   }
 </style>
