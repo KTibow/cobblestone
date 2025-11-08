@@ -2,6 +2,7 @@
   import iconUp from "@ktibow/iconset-material-symbols/arrow-upward-rounded";
   import iconDots from "@ktibow/iconset-material-symbols/more-horiz";
   import iconFile from "@ktibow/iconset-material-symbols/draft-outline-rounded";
+  import iconPlusRectangle from "@ktibow/iconset-material-symbols/rectangle-add-outline-rounded";
   import iconPlus from "@ktibow/iconset-material-symbols/add-2-rounded";
   import iconMarkdown from "@ktibow/iconset-material-symbols/article-rounded";
   import { getScopedFS } from "monoidentity";
@@ -117,7 +118,7 @@
       }}
     />
   {/each}
-  <File text="New drawing" icon={iconPlus} onclick={newDrawing} />
+  <File text="New drawing" icon={iconPlusRectangle} onclick={newDrawing} />
   <File text="New note" icon={iconPlus} onclick={newNote} />
 </div>
 {#if currentFilePath}
