@@ -24,6 +24,7 @@
   <textarea
     class="focus-none"
     value={content}
+    placeholder="Write something, anything"
     onchange={(e) => {
       const value = e.currentTarget.value;
       fs[path] = value;
