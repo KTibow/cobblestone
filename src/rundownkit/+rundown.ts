@@ -96,12 +96,7 @@ const getSynergySchoolUUID = (domain: string, school: string) => {
     throw new Error("Unknown domain");
   }
 };
-const getSubs = async (
-  email: string,
-  password: string,
-  school: string,
-  teachers: string[],
-): Promise<string[]> => {
+const getSubs = async (email: string, school: string, teachers: string[]): Promise<string[]> => {
   const domain = email.split("@")[1];
   const apps = districtApps[domain];
   if (!apps) {
@@ -133,7 +128,6 @@ const getSubs = async (
 };
 const getBirthdays = async (
   email: string,
-  password: string,
   school: string,
   teachers: string[],
 ): Promise<string[]> => {
@@ -152,12 +146,8 @@ export const getRundown = async (email: string, password: string): Promise<strin
   const [alerts, weather, subs, birthdays] = await Promise.allSettled([
     getAlerts(email),
     schoolTeachersPromise.then(({ school }) => getWeather(email, password, school)),
-    schoolTeachersPromise.then(({ school, teachers }) =>
-      getSubs(email, password, school, teachers),
-    ),
-    schoolTeachersPromise.then(({ school, teachers }) =>
-      getBirthdays(email, password, school, teachers),
-    ),
+    schoolTeachersPromise.then(({ school, teachers }) => getSubs(email, school, teachers)),
+    schoolTeachersPromise.then(({ school, teachers }) => getBirthdays(email, school, teachers)),
   ]);
 
   const output: string[] = [];
