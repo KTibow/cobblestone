@@ -27,7 +27,7 @@ const getAlerts = async (email: string): Promise<string[]> => {
 
 // School dependent
 const WIND_WORD = /\bwind\b/i;
-const getWeather = async (email: string, password: string, school: string): Promise<string[]> => {
+const getWeather = async (email: string, school: string): Promise<string[]> => {
   const domain = email.split("@")[1];
   const nwsGroup = schoolNWS[domain];
   if (!nwsGroup) {
@@ -145,7 +145,7 @@ export const getRundown = async (email: string, password: string): Promise<strin
   const schoolTeachersPromise = getSchoolAndTeachers(email, password);
   const [alerts, weather, subs, birthdays] = await Promise.allSettled([
     getAlerts(email),
-    schoolTeachersPromise.then(({ school }) => getWeather(email, password, school)),
+    schoolTeachersPromise.then(({ school }) => getWeather(email, school)),
     schoolTeachersPromise.then(({ school, teachers }) => getSubs(email, school, teachers)),
     schoolTeachersPromise.then(({ school, teachers }) => getBirthdays(email, school, teachers)),
   ]);
