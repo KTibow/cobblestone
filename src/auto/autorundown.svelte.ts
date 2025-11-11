@@ -8,7 +8,7 @@ export const state = $state({
 
 const config = getStorage("config");
 
-export const update = async () => {
+const update = async () => {
   if (config["norundown"]) {
     state.status = "Rundown is disabled";
     return;
@@ -44,11 +44,11 @@ export const update = async () => {
   }
 };
 
-update();
-const i = setInterval(update, 1000 * 60 * 60);
+export const start = () => {
+  update();
+  const interval = setInterval(update, 1000 * 60 * 60);
 
-if (import.meta.hot) {
-  import.meta.hot.dispose(() => {
-    clearInterval(i);
-  });
-}
+  return () => {
+    clearInterval(interval);
+  };
+};
