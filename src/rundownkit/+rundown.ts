@@ -121,7 +121,7 @@ const getSubs = async (email: string, school: string, teachers: string[]): Promi
   const { d }: { d: { Name: string }[] } = await r.json();
   return d
     .map((x) => x.Name)
-    .filter((n) => n != "Select a substitute...")
+    .filter((x) => x != "Select a substitute...")
     .map((x) => x.split(", ").reverse().join(" "))
     .filter((t) => teachers.includes(t))
     .map((t) => `${t} is out today`);
