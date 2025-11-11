@@ -17,6 +17,8 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
+        env:
+          BIRTHDAYS: ${{ secrets.BIRTHDAYS }}
       - name: Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -24,3 +26,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CBLSTN }}
           channelId: live
           projectId: cblstn
+      - name: Monoserve
+        uses: KTibow/monoserve/deploy@main
+        with:
+          config-broker-url: "https://config-broker.ktibow.workers.dev"

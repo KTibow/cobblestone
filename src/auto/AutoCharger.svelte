@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getScopedFS } from "monoidentity";
   import { onMount } from "svelte";
-  import { getToday } from "./lib";
+  import { getToday } from "../lib";
 
   const fs = getScopedFS("Obsidian");
   const CHARGE_TASK =
