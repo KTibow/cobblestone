@@ -31,7 +31,7 @@
     "prettier-plugin-svelte": "^3.4.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "school-districts": "^4.1.0",
+    "school-districts": "^5.0.0",
     "svelte": "^5.41.2",
     "svelte-check": "^4.3.3",
     "typescript": "~5.9.3",

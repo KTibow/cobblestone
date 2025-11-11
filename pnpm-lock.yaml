@@ -66,8 +66,8 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
       school-districts:
-        specifier: ^4.1.0
-        version: 4.1.0
+        specifier: ^5.0.0
+        version: 5.0.0
       svelte:
         specifier: ^5.41.2
         version: 5.41.2
@@ -1580,6 +1580,9 @@ packages:
 
   school-districts@4.1.0:
     resolution: {integrity: sha512-HlPlprJSHpI3n/+o7V0KuqqD42anGiHLK6X0UzCHnA+vNHMRhbyEDrUz5y4Xzqkd+3av1adWFotrBQ0+wNe5eQ==}
+
+  school-districts@5.0.0:
+    resolution: {integrity: sha512-YlhiqwEJIsq8ucEGE9Lp0KD0GvAZMufEAXgbczbO4a6YBmmQz1TSoatLFcoirJO4ulyYUk6xO3xz5YxWP+Qs2A==}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -3249,6 +3252,8 @@ snapshots:
   scheduler@0.27.0: {}
 
   school-districts@4.1.0: {}
+
+  school-districts@5.0.0: {}
 
   shebang-command@2.0.0:
     dependencies:

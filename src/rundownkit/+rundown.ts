@@ -1,4 +1,4 @@
-import { districtApps, districtNews, schoolNWS } from "school-districts";
+import { districtApps, districtNews, schoolApps } from "school-districts";
 import { listBirthdays } from "./birthdaykit";
 import { getTodayFormatted } from "./_today";
 import { getSchoolAndTeachers } from "./_st";
@@ -29,17 +29,22 @@ const getAlerts = async (email: string): Promise<string[]> => {
 const WIND_WORD = /\bwind\b/i;
 const getWeather = async (email: string, school: string): Promise<string[]> => {
   const domain = email.split("@")[1];
-  const nwsGroup = schoolNWS[domain];
-  if (!nwsGroup) {
+  const appsGroup = schoolApps[domain];
+  if (!appsGroup) {
     throw new Error("Unknown domain");
   }
 
-  const nwsUrl = nwsGroup[school];
-  if (!nwsUrl) {
+  const apps = appsGroup[school];
+  if (!apps) {
     throw new Error("Unknown school");
   }
 
-  const forecastResponse = await fetch(nwsUrl, {
+  const nws = apps.find((a) => a.app == "NWS");
+  if (!nws) {
+    throw new Error("School does not have NWS");
+  }
+
+  const forecastResponse = await fetch(`${nws.base}/forecast`, {
     headers: { "user-agent": "RundownKit by @KTibow" },
   });
   const forecastData = await forecastResponse.json();
