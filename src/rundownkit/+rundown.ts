@@ -49,7 +49,12 @@ const getWeather = async (email: string, school: string): Promise<string[]> => {
   });
   const forecastData = await forecastResponse.json();
 
-  const full: string = forecastData.properties.periods[0].detailedForecast;
+  const today = forecastData.properties.periods[0];
+  if (!today.isDaytime) {
+    return [];
+  }
+
+  const full: string = today.detailedForecast;
   const minusWind = full
     .split(/(?<=\.) /)
     .filter((sentence) => !WIND_WORD.test(sentence))
