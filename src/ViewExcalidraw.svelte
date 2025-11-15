@@ -6,17 +6,12 @@
   import "@excalidraw/excalidraw/index.css";
 
   let {
-    value,
-    onSave,
+    value = $bindable(),
   }: {
     value: string;
-    onSave: (value: string) => void;
   } = $props();
 
   let api: ExcalidrawImperativeAPI | null = null;
-  let saveTimeout: ReturnType<typeof setTimeout> | null = null;
-  let pendingElements: readonly any[] | null = null;
-  let pendingAppState: any | null = null;
 
   function parseValue(text: string) {
     try {
@@ -50,22 +45,13 @@
   function scheduleSave() {
     // Capture the current state immediately (cheap copy)
     if (!api) return;
-    pendingElements = api.getSceneElements();
-    pendingAppState = api.getAppState();
+    const elements = api.getSceneElements();
+    const appState = api.getAppState();
 
-    // Debounce the actual save to avoid hammering network
-    if (saveTimeout) clearTimeout(saveTimeout);
-
-    saveTimeout = setTimeout(() => {
-      if (pendingElements && pendingAppState) {
-        const serialized = serializeData(pendingElements, pendingAppState);
-        if (serialized != value) {
-          onSave(serialized);
-        }
-        pendingElements = null;
-        pendingAppState = null;
-      }
-    }, 2000);
+    const serialized = serializeData(elements, appState);
+    if (serialized != value) {
+      value = serialized;
+    }
   }
 
   function mountExcalidraw(node: HTMLDivElement) {

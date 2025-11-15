@@ -6,11 +6,17 @@
     path.startsWith("Obsidian") &&
     !path.includes(".obsidian") &&
     (path.endsWith(".md") || path.endsWith(".excalidraw"));
+  const isLogin = (path: string) => path == ".core/login.encjson";
 </script>
 
 <Monoidentity
   app="cobblestone"
-  shouldBackup={(path) => path.startsWith(".core") || isObsidian(path)}
+  getSyncStrategy={(path) =>
+    isLogin(path)
+      ? { mode: "immediate" }
+      : isObsidian(path)
+        ? { mode: "debounced", debounceMs: 10000 }
+        : { mode: "none" }}
 >
   <App />
 </Monoidentity>
