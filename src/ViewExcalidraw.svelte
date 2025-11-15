@@ -15,6 +15,8 @@
 
   let api: ExcalidrawImperativeAPI | null = null;
   let saveTimeout: ReturnType<typeof setTimeout> | null = null;
+  let pendingElements: readonly any[] | null = null;
+  let pendingAppState: any | null = null;
 
   function parseValue(text: string) {
     try {
@@ -28,9 +30,7 @@
     }
   }
 
-  function serializeScene(api: ExcalidrawImperativeAPI) {
-    const elements = api.getSceneElements();
-    const appState = api.getAppState();
+  function serializeData(elements: readonly any[], appState: any) {
     return JSON.stringify(
       {
         type: "excalidraw",
@@ -48,14 +48,23 @@
   }
 
   function scheduleSave() {
-    // Debounce saves to avoid hammering network
+    // Capture the current state immediately (cheap copy)
+    if (!api) return;
+    pendingElements = api.getSceneElements();
+    pendingAppState = api.getAppState();
+
+    // Debounce the actual save to avoid hammering network
     if (saveTimeout) clearTimeout(saveTimeout);
 
     saveTimeout = setTimeout(() => {
-      if (!api) return;
-      const serialized = serializeScene(api);
-      if (serialized == value) return;
-      onSave(serialized);
+      if (pendingElements && pendingAppState) {
+        const serialized = serializeData(pendingElements, pendingAppState);
+        if (serialized != value) {
+          onSave(serialized);
+        }
+        pendingElements = null;
+        pendingAppState = null;
+      }
     }, 2000);
   }
 
@@ -84,7 +93,7 @@
   // Update scene when value prop changes externally
   $effect(() => {
     if (!api) return;
-    const currentSerialized = serializeScene(api);
+    const currentSerialized = serializeData(api.getSceneElements(), api.getAppState());
     if (currentSerialized && value && currentSerialized != value) {
       const data = parseValue(value);
       api.updateScene(data);
