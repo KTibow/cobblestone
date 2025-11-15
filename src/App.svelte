@@ -153,18 +153,19 @@
 
   .location {
     display: flex;
-    align-items: center;
     height: 3rem;
     justify-content: space-between;
     padding-inline-start: 0.5rem;
     color: rgb(var(--m3-scheme-on-surface-variant));
 
+    span {
+      align-self: center;
+    }
     .up {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 1lh;
-      height: 1lh;
       border-radius: var(--m3-util-rounding-full);
 
       position: relative;
