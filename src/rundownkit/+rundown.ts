@@ -60,7 +60,7 @@ const getWeather = async (email: string, school: string): Promise<string[]> => {
     .filter((sentence) => !WIND_WORD.test(sentence))
     .join(" ");
 
-  return [minusWind];
+  return [`Weather: ${minusWind}`];
 };
 
 // Teacher dependent
@@ -193,6 +193,10 @@ export const addRundown = (rundown: string[], page: string) => {
     const text = `- ${item}\n`;
     if (page.includes(text, rundownAnchor)) {
       continue;
+    }
+
+    if (item.startsWith("Weather:")) {
+      page = page.replace(/^- Weather: .+$/m, "");
     }
     page = page.slice(0, rundownAnchor) + text + page.slice(rundownAnchor);
   }
