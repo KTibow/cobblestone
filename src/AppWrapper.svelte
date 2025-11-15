@@ -15,7 +15,7 @@
     isLogin(path)
       ? { mode: "immediate" }
       : isObsidian(path)
-        ? { mode: "debounced", debounceMs: 10000 }
+        ? { mode: "debounced", debounceMs: 5000 }
         : { mode: "none" }}
 >
   <App />
