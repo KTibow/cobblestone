@@ -13,6 +13,9 @@ const getAlerts = async (email: string): Promise<string[]> => {
 
   if (news.type == "flashalert") {
     const r = await fetch(news.url);
+    if (!r.ok) {
+      throw new Error(`FlashAlert is ${r.status}ing`);
+    }
     const t = await r.text();
     const d = t
       .split("\n")
