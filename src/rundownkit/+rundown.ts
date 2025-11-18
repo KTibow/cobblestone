@@ -152,12 +152,15 @@ const getBirthdays = async (
 };
 
 export const getRundown = async (email: string, password: string): Promise<string[]> => {
+  const isWeekend = [0, 6].includes(new Date().getDay());
   const schoolTeachersPromise = getSchoolAndTeachers(email, password);
-  const [alerts, weather, subs, birthdays] = await Promise.allSettled([
+  const [alerts, weather, birthdays, subs] = await Promise.allSettled([
     getAlerts(email),
     schoolTeachersPromise.then(({ school }) => getWeather(email, school)),
-    schoolTeachersPromise.then(({ school, teachers }) => getSubs(email, school, teachers)),
     schoolTeachersPromise.then(({ school, teachers }) => getBirthdays(email, school, teachers)),
+    isWeekend
+      ? Promise.resolve([])
+      : schoolTeachersPromise.then(({ school, teachers }) => getSubs(email, school, teachers)),
   ]);
 
   const output: string[] = [];
@@ -174,8 +177,8 @@ export const getRundown = async (email: string, password: string): Promise<strin
 
   addResult("alerts", alerts);
   addResult("weather", weather);
-  addResult("substitutes", subs);
   addResult("birthdays", birthdays);
+  addResult("substitutes", subs);
 
   return output;
 };
