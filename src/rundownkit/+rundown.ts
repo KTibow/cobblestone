@@ -137,7 +137,7 @@ const getSubs = async (email: string, school: string, teachers: string[]): Promi
     .filter((x) => x != "Select a substitute...")
     .map((x) => x.split(", ").reverse().join(" "))
     .filter((t) => teachers.includes(t))
-    .map((t) => `${t} is out today`);
+    .map((t) => `${t} has a sub`);
 };
 const getBirthdays = async (
   email: string,
