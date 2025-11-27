@@ -6,10 +6,7 @@
   const config = getStorage("config");
 </script>
 
-<div
-  class="rundown-controls"
-  title="Rundown tracks the weather, special alerts, and teacher events for you"
->
+<div title="Rundown tracks the weather, special alerts, and teacher events for you">
   <span>{state.status}</span>
   {#if state.status == "Rundown is disabled"}
     <Button
@@ -29,18 +26,3 @@
     >
   {/if}
 </div>
-
-<style>
-  .rundown-controls {
-    display: flex;
-    height: 2.5rem;
-    background-color: rgb(var(--m3-scheme-surface-container-low));
-    color: rgb(var(--m3-scheme-on-surface-variant));
-    border-radius: var(--m3-util-rounding-full);
-  }
-  span {
-    align-self: center;
-    margin-left: 1rem;
-    margin-right: 0.5rem;
-  }
-</style>
