@@ -37,7 +37,6 @@
     background-color: rgb(var(--m3-scheme-surface-container-low));
     color: rgb(var(--m3-scheme-on-surface-variant));
     border-radius: var(--m3-util-rounding-full);
-    align-self: end;
   }
   span {
     align-self: center;

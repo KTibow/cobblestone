@@ -16,7 +16,7 @@
       ? { mode: "immediate" }
       : isObsidian(path)
         ? { mode: "debounced", debounceMs: 5000 }
-        : { mode: "none" }}
+        : undefined}
 >
   <App />
 </Monoidentity>
