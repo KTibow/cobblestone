@@ -15,12 +15,14 @@
   font-display: swap;
   src: url("https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1") format("woff2");
 }
-body {
-  display: flex;
-  height: 100dvh;
+:root {
   background-color: rgb(var(--m3-scheme-surface-container-lowest));
   color: rgb(var(--m3-scheme-on-background));
   --m3-font: Inter Variable, system-ui;
+}
+body {
+  display: flex;
+  height: 100dvh;
 }
 @media (prefers-color-scheme: light) {
   :root {
