@@ -1,4 +1,4 @@
-import { getScopedFS, getStorage, getLoginRecognized, relog } from "monoidentity";
+import { getScopedFS, getStorage, getLoginRecognized, completeSync } from "monoidentity";
 import { getToday } from "../lib";
 import { addRundown, getRundown } from "../rundownkit/+rundown";
 
@@ -8,7 +8,9 @@ export const state = $state({
 
 const config = getStorage("config");
 
-const update = async () => {
+const update = async (signal: AbortSignal) => {
+  if (signal.aborted) return;
+
   if (config["norundown"]) {
     state.status = "Rundown is disabled";
     return;
@@ -28,6 +30,11 @@ const update = async () => {
 
   try {
     const rundown = await getRundown(auth.email, auth.password);
+    signal.throwIfAborted();
+
+    // Pause before writing
+    await completeSync();
+    signal.throwIfAborted();
 
     const today = getToday();
     const before = fs[today] || "";
@@ -45,10 +52,13 @@ const update = async () => {
 };
 
 export const start = () => {
-  update();
-  const interval = setInterval(update, 1000 * 60 * 60);
+  const controller = new AbortController();
+
+  update(controller.signal);
+  const interval = setInterval(() => update(controller.signal), 1000 * 60 * 60);
 
   return () => {
+    controller.abort();
     clearInterval(interval);
   };
 };

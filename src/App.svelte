@@ -10,7 +10,7 @@
   import { onMount } from "svelte";
   import View from "./View.svelte";
   import File from "./File.svelte";
-  import AutoCharger from "./auto/AutoCharger.svelte";
+  import { start as startCharger } from "./auto/autocharger";
   import { start as startRundown } from "./auto/autorundown.svelte";
   import Home from "./Home.svelte";
   const iconExcalidraw = {
@@ -20,12 +20,11 @@
   };
 
   onMount(() => {
-    let endRundown = () => {};
-    completeSync().then(() => {
-      endRundown = startRundown();
-    });
+    const endRundown = startRundown();
+    const endCharger = startCharger();
     return () => {
       endRundown();
+      endCharger();
     };
   });
 
@@ -101,7 +100,6 @@
   };
 </script>
 
-<AutoCharger />
 <div class="files">
   <div class="location">
     <span>{currentDirectoryPath}</span>
