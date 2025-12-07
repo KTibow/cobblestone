@@ -33,8 +33,8 @@
     position: relative;
 
     &:disabled {
-      background-color: rgb(var(--m3-scheme-primary-container-subtle));
-      color: rgb(var(--m3-scheme-on-primary-container-subtle));
+      background-color: var(--m3c-primary-container-subtle);
+      color: var(--m3c-on-primary-container-subtle);
     }
   }
 </style>

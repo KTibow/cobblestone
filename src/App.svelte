@@ -138,7 +138,7 @@
 {:else}
   <div class="empty">
     {#await completeSync()}
-      <p style:margin="auto" style:color="rgb(var(--m3-scheme-on-surface-variant))">Syncing</p>
+      <p style:margin="auto" style:color="var(--m3c-on-surface-variant)">Syncing</p>
     {:then}
       <Home {loadFile} />
     {/await}
@@ -159,7 +159,7 @@
     height: 3rem;
     justify-content: space-between;
     padding-inline-start: 0.5rem;
-    color: rgb(var(--m3-scheme-on-surface-variant));
+    color: var(--m3c-on-surface-variant);
 
     span {
       align-self: center;
@@ -169,7 +169,7 @@
       align-items: center;
       justify-content: center;
       width: 1lh;
-      border-radius: var(--m3-util-rounding-full);
+      border-radius: var(--m3-shape-full);
 
       position: relative;
     }
@@ -181,6 +181,6 @@
     flex-grow: 1;
     border-radius: 1rem 0 0 1rem;
     padding: 0.5rem;
-    background-color: rgb(var(--m3-scheme-background));
+    background-color: var(--m3c-background);
   }
 </style>

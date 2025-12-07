@@ -47,9 +47,9 @@
     > :global(*) {
       display: flex;
       height: 2.5rem;
-      background-color: rgb(var(--m3-scheme-surface-container-low));
-      color: rgb(var(--m3-scheme-on-surface-variant));
-      border-radius: var(--m3-util-rounding-full);
+      background-color: var(--m3c-surface-container-low);
+      color: var(--m3c-on-surface-variant);
+      border-radius: var(--m3-shape-full);
       > :global(span) {
         align-self: center;
         margin-left: 1rem;
@@ -70,12 +70,12 @@
       opacity,
       overlay allow-discrete,
       display allow-discrete;
-    transition-duration: var(--m3-util-duration-fast);
-    transition-timing-function: var(--m3-util-timing-function-fast);
+    transition-duration: var(--m3-duration-fast);
+    transition-timing-function: var(--m3-timing-function-fast);
 
     flex-direction: column;
     border-radius: 1.5rem;
-    background-color: rgb(var(--m3-scheme-surface-container-highest));
+    background-color: var(--m3c-surface-container-highest);
 
     position-anchor: --connect;
     position: absolute;
@@ -92,8 +92,8 @@
         padding,
         overlay allow-discrete,
         display allow-discrete;
-      transition-duration: var(--m3-util-duration-spatial);
-      transition-timing-function: var(--m3-util-timing-function-spatial);
+      transition-duration: var(--m3-duration-spatial);
+      transition-timing-function: var(--m3-timing-function-spatial);
       @starting-style {
         height: 0;
         padding-block: 0;
@@ -101,10 +101,10 @@
     }
 
     a {
-      color: rgb(var(--m3-scheme-primary));
+      color: var(--m3c-primary);
     }
     em {
-      color: rgb(var(--m3-scheme-on-surface-variant));
+      color: var(--m3c-on-surface-variant);
     }
     .indented {
       margin-left: 1rem;
