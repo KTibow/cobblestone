@@ -19,6 +19,7 @@
   background-color: var(--m3c-surface-container-lowest);
   color: var(--m3c-on-background);
   --m3-font: Inter Variable, system-ui;
+  box-sizing: border-box;
 }
 body {
   display: flex;

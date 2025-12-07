@@ -1,8 +1,13 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { monoserve } from "monoserve/plugin";
+import { functionsMixins } from "vite-plugin-functions-mixins";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [svelte(), monoserve({ monoserverURL: "https://benignmonoserver.fly.dev" })],
+  plugins: [
+    svelte(),
+    functionsMixins({ deps: ["m3-svelte"] }),
+    monoserve({ monoserverURL: "https://benignmonoserver.fly.dev" }),
+  ],
 });
