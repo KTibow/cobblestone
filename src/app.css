@@ -16,6 +16,7 @@
   src: url("https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1") format("woff2");
 }
 :root {
+  @apply --m3-body-large;
   background-color: var(--m3c-surface-container-lowest);
   color: var(--m3c-on-background);
   --m3-font: Inter Variable, system-ui;
