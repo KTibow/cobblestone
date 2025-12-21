@@ -1,4 +1,4 @@
-import { completeSync, getScopedFS } from "monoidentity";
+import { getScopedFS } from "monoidentity";
 import { getToday } from "../lib";
 
 const CHARGE_TASK =
@@ -21,11 +21,10 @@ export const start = () => {
       if (battery.charging) return;
       if (battery.level > 0.3) return;
 
-      // Pause before writing
-      await completeSync();
+      const today = getToday();
+      await fs.sync(today);
       signal.throwIfAborted();
 
-      const today = getToday();
       const content = fs[today] || "";
       if (content.includes(CHARGE_TASK)) return;
 

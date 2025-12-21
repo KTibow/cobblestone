@@ -1,4 +1,4 @@
-import { getScopedFS, getStorage, getLoginRecognized, completeSync } from "monoidentity";
+import { getScopedFS, getStorage, getLoginRecognized } from "monoidentity";
 import { getToday } from "../lib";
 import { addRundown, getRundown } from "../rundownkit/+rundown";
 
@@ -32,11 +32,10 @@ const update = async (signal: AbortSignal) => {
     const rundown = await getRundown(auth.email, auth.password);
     signal.throwIfAborted();
 
-    // Pause before writing
-    await completeSync();
+    const today = getToday();
+    await fs.sync(today);
     signal.throwIfAborted();
 
-    const today = getToday();
     const before = fs[today] || "";
     const after = addRundown(rundown, before);
 

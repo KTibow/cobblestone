@@ -6,15 +6,15 @@
 
   const path = _path; // this component must be {#key}d
 
-  const flush = fs.flush as any;
+  const sync = fs.sync as any as (path: string) => Promise<void>;
   onDestroy(() => {
-    flush(path);
+    sync(path);
   });
 </script>
 
 <svelte:window
   onblur={() => {
-    flush(path);
+    sync(path);
   }}
 />
 {#if path.endsWith(".png")}
