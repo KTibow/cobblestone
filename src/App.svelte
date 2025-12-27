@@ -181,6 +181,6 @@
     flex-grow: 1;
     border-radius: 1rem 0 0 1rem;
     padding: 0.5rem;
-    background-color: var(--m3c-background);
+    background-color: var(--m3c-surface);
   }
 </style>

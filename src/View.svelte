@@ -37,6 +37,6 @@
     font: inherit;
     resize: none;
     border-radius: 1rem 0 0 1rem;
-    background-color: var(--m3c-background);
+    background-color: var(--m3c-surface);
   }
 </style>
