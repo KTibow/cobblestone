@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import { Icon, Layer } from "m3-svelte";
+  import { Icon } from "m3-svelte";
   import type { IconifyIcon } from "@iconify/types";
 
   let {
@@ -13,8 +13,7 @@
   } = $props();
 </script>
 
-<button class="file" {...restProps}>
-  <Layer />
+<button class="file m3-layer" {...restProps}>
   {text}
   <Icon {icon} size={20} style="flex-shrink:0" />
 </button>
@@ -30,7 +29,6 @@
     padding: 0 0.5rem;
     border-radius: 0.5rem;
     flex-shrink: 0;
-    position: relative;
 
     &:disabled {
       background-color: var(--m3c-primary-container-subtle);

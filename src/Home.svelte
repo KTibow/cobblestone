@@ -79,6 +79,8 @@
 
     position-anchor: --connect;
     position: absolute;
+    /* fallback */
+    inset: auto auto 0 auto;
     inset: auto auto anchor(bottom) anchor(center);
     translate: -50% 0;
 

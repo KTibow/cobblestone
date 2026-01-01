@@ -6,7 +6,7 @@
   import iconPlus from "@ktibow/iconset-material-symbols/add-2-rounded";
   import iconMarkdown from "@ktibow/iconset-material-symbols/article-rounded";
   import { getScopedFS, waitForSync } from "monoidentity";
-  import { Icon, Layer } from "m3-svelte";
+  import { Icon } from "m3-svelte";
   import { onMount } from "svelte";
   import View from "./View.svelte";
   import File from "./File.svelte";
@@ -105,12 +105,11 @@
     <span>{currentDirectoryPath}</span>
     {#if currentDirectoryPath != "/"}
       <button
-        class="up focus-inset"
+        class="up m3-layer focus-inset"
         onclick={() =>
           (currentDirectoryPath =
             currentDirectoryPath.slice(0, -1).split("/").slice(0, -1).join("/") + "/")}
       >
-        <Layer />
         <Icon icon={iconUp} size={24} />
       </button>
     {/if}
@@ -170,8 +169,6 @@
       justify-content: center;
       width: 1lh;
       border-radius: var(--m3-shape-full);
-
-      position: relative;
     }
   }
 
