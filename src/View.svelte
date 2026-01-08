@@ -26,12 +26,13 @@
     <ViewExcalidraw bind:value={fs[path]} />
   {/await}
 {:else}
-  <textarea class="focus-none" placeholder="Write something, anything" bind:value={fs[path]}
+  <textarea placeholder="Write something, anything" bind:value={fs[path]}
   ></textarea>
 {/if}
 
 <style>
   textarea {
+    @apply --m3-focus-none;
     flex-grow: 1;
     padding: 1rem;
     font: inherit;
