@@ -4,8 +4,10 @@
 
   let { path: _path, fs }: { path: string; fs: Record<string, string> } = $props();
 
+  // svelte-ignore state_referenced_locally
   const path = _path; // this component must be {#key}d
 
+  // svelte-ignore state_referenced_locally
   const sync = fs.sync as any as (path: string) => Promise<void>;
   onDestroy(() => {
     sync(path);
