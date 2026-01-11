@@ -6,7 +6,7 @@
   import iconPlus from "@ktibow/iconset-material-symbols/add-2-rounded";
   import iconMarkdown from "@ktibow/iconset-material-symbols/article-rounded";
   import { getScopedFS, waitForSync } from "monoidentity";
-  import { Icon } from "m3-svelte";
+  import { Icon, LoadingIndicator } from "m3-svelte";
   import { onMount } from "svelte";
   import View from "./View.svelte";
   import File from "./File.svelte";
@@ -137,7 +137,7 @@
 {:else}
   <div class="empty">
     {#await waitForSync("*")}
-      <p style:margin="auto" style:color="var(--m3c-on-surface-variant)">Syncing</p>
+      <LoadingIndicator />
     {:then}
       <Home {loadFile} />
     {/await}
