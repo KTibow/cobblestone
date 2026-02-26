@@ -1,6 +1,6 @@
 import { getScopedFS, getStorage, getLoginRecognized } from 'monoidentity';
 import { getToday } from '../lib';
-import { addRundown, getRundown } from '../rundownkit/+rundown';
+import { addRundown, getRundown } from './rundownkit/+rundown';
 
 export const state = $state({
   status: '...' as string,
