@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Monoidentity } from "monoidentity";
-  import App from "./App.svelte";
+  import { Monoidentity } from 'monoidentity';
+  import App from './App.svelte';
 
   const isObsidian = (path: string) =>
-    path.startsWith("Obsidian") &&
-    !path.includes(".obsidian") &&
-    (path.endsWith(".md") || path.endsWith(".excalidraw"));
-  const isLogin = (path: string) => path == ".core/login.encjson";
+    path.startsWith('Obsidian') &&
+    !path.includes('.obsidian') &&
+    (path.endsWith('.md') || path.endsWith('.excalidraw'));
+  const isLogin = (path: string) => path == '.core/login.encjson';
 </script>
 
 <Monoidentity
   app="cobblestone"
   getSyncStrategy={(path) =>
     isLogin(path)
-      ? { mode: "immediate" }
+      ? { mode: 'immediate' }
       : isObsidian(path)
-        ? { mode: "debounced", debounceMs: 5000 }
+        ? { mode: 'debounced', debounceMs: 5000 }
         : undefined}
 >
   <App />

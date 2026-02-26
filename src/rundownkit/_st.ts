@@ -1,11 +1,11 @@
-import studentvue from "fast-studentvue";
-import { relog } from "monoidentity";
-import { getTodayFormatted } from "./_today";
-import { getStorage } from "monoidentity";
+import studentvue from 'fast-studentvue';
+import { relog } from 'monoidentity';
+import { getTodayFormatted } from './_today';
+import { getStorage } from 'monoidentity';
 
 const iterating = <T>(thing: T | T[]) => (Array.isArray(thing) ? thing : !thing ? [] : [thing]);
 const first = <T>(thing: T | T[]): T => (Array.isArray(thing) ? thing[0] : thing);
-const cache = getStorage("cache");
+const cache = getStorage('cache');
 
 export const getSchoolAndTeachers = async (
   email: string,
@@ -18,16 +18,16 @@ export const getSchoolAndTeachers = async (
     return cached.data;
   }
 
-  const data = await studentvue({ email, password }, relog, "StudentClassList");
+  const data = await studentvue({ email, password }, relog, 'StudentClassList');
   const {
     StudentClassSchedule: { ClassLists, TodayScheduleInfoData },
   } = data;
   const classList = iterating(ClassLists?.ClassListing);
   const teachers = classList
-    .map((c) => c["@_Teacher"])
-    .map((t) => t.split(", ").reverse().join(" "));
+    .map((c) => c['@_Teacher'])
+    .map((t) => t.split(', ').reverse().join(' '));
 
-  const school = first(TodayScheduleInfoData.SchoolInfos.SchoolInfo)["@_SchoolName"];
+  const school = first(TodayScheduleInfoData.SchoolInfos.SchoolInfo)['@_SchoolName'];
 
   const result = { school, teachers };
   cache.schoolAndTeachers = { key, data: result };

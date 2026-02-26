@@ -1,14 +1,14 @@
-import { getStorage } from "monoidentity";
-import birthdayRemote from "./birthday.remote";
+import { getStorage } from 'monoidentity';
+import birthdayRemote from './birthday.remote';
 
-const cache = getStorage("cache");
+const cache = getStorage('cache');
 
 export const listBirthdays = async (
   district: string,
   school: string,
   teachers: string[],
 ): Promise<Record<string, string>> => {
-  const key = `${district}:${school}:${teachers.sort().join(";")}`;
+  const key = `${district}:${school}:${teachers.sort().join(';')}`;
   const cached = cache.birthdays;
 
   if (cached?.key == key) {

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import React from "react";
-  import { createRoot } from "react-dom/client";
-  import { Excalidraw, THEME } from "@excalidraw/excalidraw";
-  import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
-  import "@excalidraw/excalidraw/index.css";
+  import React from 'react';
+  import { createRoot } from 'react-dom/client';
+  import { Excalidraw, THEME } from '@excalidraw/excalidraw';
+  import type { ExcalidrawImperativeAPI } from '@excalidraw/excalidraw/types';
+  import '@excalidraw/excalidraw/index.css';
 
   let {
     value = $bindable(),
@@ -28,9 +28,9 @@
   function serializeData(elements: readonly any[], appState: any) {
     return JSON.stringify(
       {
-        type: "excalidraw",
+        type: 'excalidraw',
         version: 2,
-        source: "https://excalidraw.com",
+        source: 'https://excalidraw.com',
         elements,
         appState: {
           viewBackgroundColor: appState.viewBackgroundColor,
@@ -65,7 +65,7 @@
           scheduleSave();
         },
         initialData: parseValue(value),
-        theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? THEME.DARK : THEME.LIGHT,
+        theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? THEME.DARK : THEME.LIGHT,
       }),
     );
 

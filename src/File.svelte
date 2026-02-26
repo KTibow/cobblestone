@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from "svelte/elements";
-  import { Icon } from "m3-svelte";
-  import type { IconifyIcon } from "@iconify/types";
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import { Icon } from 'm3-svelte';
+  import type { IconifyIcon } from '@iconify/types';
 
   let {
     text,

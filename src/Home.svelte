@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Button } from "m3-svelte";
-  import type { StorageSetup } from "monoidentity";
-  import AutoRundownInfo from "./auto/AutoRundownInfo.svelte";
-  import { getToday } from "./lib";
+  import { Button } from 'm3-svelte';
+  import type { StorageSetup } from 'monoidentity';
+  import AutoRundownInfo from './auto/AutoRundownInfo.svelte';
+  import { getToday } from './lib';
 
   let { loadFile }: { loadFile: (path: string) => void } = $props();
-  const setup = JSON.parse(localStorage["monoidentity-x/setup"]) as StorageSetup;
+  const setup = JSON.parse(localStorage['monoidentity-x/setup']) as StorageSetup;
 </script>
 
 <Button variant="outlined" size="xl" style="margin:auto" onclick={() => loadFile(getToday())}
@@ -13,10 +13,10 @@
 >
 <div class="controls">
   <AutoRundownInfo />
-  {#if setup.method == "cloud"}
+  {#if setup.method == 'cloud'}
     {@const [endpoint, bucket] = [
-      setup.base.split("/").slice(0, -1).join("/"),
-      setup.base.split("/").at(-1)!,
+      setup.base.split('/').slice(0, -1).join('/'),
+      setup.base.split('/').at(-1)!,
     ]}
     <div class="cr">
       <Button variant="text" popovertarget="connect-obsidian">Connect Obsidian</Button>

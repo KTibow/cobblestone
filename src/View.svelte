@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { CircularProgressEstimate } from "m3-svelte";
-  import { onDestroy } from "svelte";
+  import { CircularProgressEstimate } from 'm3-svelte';
+  import { onDestroy } from 'svelte';
 
   let { path: _path, fs }: { path: string; fs: Record<string, string> } = $props();
 
@@ -19,17 +19,16 @@
     sync(path);
   }}
 />
-{#if path.endsWith(".png")}
+{#if path.endsWith('.png')}
   <img src="data:image/png;base64,{btoa(fs[path])}" alt="" />
-{:else if path.endsWith(".excalidraw")}
-  {#await import("./ViewExcalidraw.svelte")}
+{:else if path.endsWith('.excalidraw')}
+  {#await import('./ViewExcalidraw.svelte')}
     <CircularProgressEstimate thickness={8} sToHalfway={0.5} style="margin:auto" />
   {:then { default: ViewExcalidraw }}
     <ViewExcalidraw bind:value={fs[path]} />
   {/await}
 {:else}
-  <textarea placeholder="Write something, anything" bind:value={fs[path]}
-  ></textarea>
+  <textarea placeholder="Write something, anything" bind:value={fs[path]}></textarea>
 {/if}
 
 <style>
