@@ -15,6 +15,9 @@ body {
   display: flex;
   height: 100dvh;
 }
+button {
+  cursor: pointer;
+}
 @function --m3-density(--size) {
   result: var(--size);
 }

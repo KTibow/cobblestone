@@ -23,7 +23,12 @@
   <img src="data:image/png;base64,{btoa(fs[path])}" alt="" />
 {:else if path.endsWith('.excalidraw')}
   {#await import('./ViewExcalidraw.svelte')}
-    <CircularProgressEstimate thickness={8} sToHalfway={0.5} style="margin:auto" />
+    <CircularProgressEstimate
+      thickness={8}
+      sToHalfway={0.5}
+      title="Loading Excalidraw"
+      style="margin:auto"
+    />
   {:then { default: ViewExcalidraw }}
     <ViewExcalidraw bind:value={fs[path]} />
   {/await}

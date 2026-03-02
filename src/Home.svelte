@@ -1,11 +1,14 @@
 <script lang="ts">
   import { Button } from 'm3-svelte';
-  import type { StorageSetup } from 'monoidentity';
+  import { KEY_CLOUD } from 'monoidentity-sync';
+  import type { Bucket } from 'monoidentity-sync';
   import AutoRundownInfo from './auto/AutoRundownInfo.svelte';
   import { getToday } from './lib';
 
   let { loadFile }: { loadFile: (path: string) => void } = $props();
-  const setup = JSON.parse(localStorage['monoidentity-x/setup']) as StorageSetup;
+  const setup = localStorage[KEY_CLOUD]
+    ? (JSON.parse(localStorage[KEY_CLOUD]) as Bucket)
+    : undefined;
 </script>
 
 <Button variant="outlined" size="xl" style="margin:auto" onclick={() => loadFile(getToday())}
@@ -13,7 +16,7 @@
 >
 <div class="controls">
   <AutoRundownInfo />
-  {#if setup.method == 'cloud'}
+  {#if setup}
     {@const [endpoint, bucket] = [
       setup.base.split('/').slice(0, -1).join('/'),
       setup.base.split('/').at(-1)!,
